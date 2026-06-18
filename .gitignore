@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+
+# uv
+# 锁文件保留提交，便于复现环境
+
+# 日志
+logs/
+
+# 运行时敏感/私有内容（不提交 Git）
+prompts/*.md
+knowledge_base/*.md
+
+# 保留模板示例
+!prompts/*.example
+!knowledge_base/*.example
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+# 覆盖用户全局 ~/.gitignore_global 的忽略，确保以下文件随仓库一起发布
+# （仓库内的 .gitignore 优先级高于全局 core.excludesFile）
+!.gitignore
+!.python-version

@@ -1,0 +1,27 @@
+[project]
+name = "kiro-support-feishu-bot-agentscope-mimo"
+version = "0.1.0"
+description = "基于 AgentScope 2.0 + MiMo-v2.5-pro 的飞书 Kiro 技术支持机器人「Kiro助手」"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "agentscope>=2.0.2",
+    "lark-oapi",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
