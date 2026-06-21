@@ -7,10 +7,19 @@
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 # ── 项目路径 ─────────────────────────────────────────────────────────────────
 
 # 项目根目录（kiro-support-feishu-bot-agentscope-mimo/）
 _PROJECT_DIR = Path(__file__).parent
+
+# ── 环境变量加载 ─────────────────────────────────────────────────────────────
+
+# 在读取 os.environ 之前，先加载项目根目录下的 .env 文件，使后台运行
+# （nohup / launchd 等脱离登录 shell 的场景）也能读到敏感配置。
+# 已存在于真实环境中的变量优先，不会被 .env 覆盖（override=False）。
+load_dotenv(_PROJECT_DIR / ".env", override=False)
 
 # ── 模型配置（MiMo，OpenAI 兼容接口）─────────────────────────────────────────
 

@@ -20,9 +20,13 @@ logs/
 prompts/*.md
 knowledge_base/*.md
 
+# 环境变量文件（含密钥，不提交 Git）
+.env
+
 # 保留模板示例
 !prompts/*.example
 !knowledge_base/*.example
+!.env.example
 
 # IDE / OS
 .DS_Store
